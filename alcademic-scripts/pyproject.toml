@@ -8,11 +8,18 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "remotezip (>=0.12.3,<0.13.0)",
+    "zhipuai (>=2.1.5.20250106,<3.0.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)"
 ]
 
 [tool.poetry]
 packages = [{include = "alcademic_scripts", from = "src"}]
 
+[tool.poetry.scripts]
+download_pdfs = "alcademic_scripts.download_pdfs:main"
+generate_meta_batch_files = "alcademic_scripts.generate_meta_batch_files:main"
+create_meta_batch_tasks = "alcademic_scripts.create_meta_batch_tasks:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
